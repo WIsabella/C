@@ -27,7 +27,8 @@ int Nchg(int m,int B)
         printf("%c",n+55);
 
     }
-}
+} 
+
 int main()
 {
     int A=0,B=0;

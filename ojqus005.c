@@ -11,9 +11,9 @@ int tSearch(int start,int end,int M,int Array[])
     if(Array[middle]==M)
     return middle;
     else if(Array[middle]>M)
-    return tSearch(middle+1,end,M,Array);
-    else if(Array[middle]<M)
     return tSearch(start,middle-1,M,Array);
+    else if(Array[middle]<M)
+    return tSearch(middle+1,end,M,Array);
 
 }
 int main()

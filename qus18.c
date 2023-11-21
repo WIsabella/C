@@ -13,5 +13,4 @@ int main()
     }
     printf("%f %f",l,h);
 
-
 }

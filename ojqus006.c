@@ -17,9 +17,11 @@
 
 
 // }
+//上边的算法超时，超时，啊啊啊。
 int Max(int a[],int n){
     int max;
-    if (n==1) {
+    if (n==1)
+    {
         return a[0];
     }
     max = Max(a,n-1);

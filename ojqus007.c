@@ -9,6 +9,8 @@ int Find(int Array[],int N)
     sum1 +=Array[i];
     for(int i=pow(2,N-1);i<=pow(2,N)-1;i++)
     sum2 +=Array[i];
+    if(sum==sum1)
+    
     if(sum1>sum2)
     return Find(Array,N-1);
 }

@@ -1,33 +1,41 @@
 #include <stdio.h>
 #include <string.h>
-#define ROWS 10
+#define ROWS 10//wok，怎么调用函数中数组的大小。
 #define COLS 10
 
 // 矩阵乘法函数
 void mul(int A[ROWS][COLS], int B[ROWS][COLS], int result[ROWS][COLS], int row1,
-         int cols1, int cols2) {
-  for (int i = 0; i < row1; ++i) {
-    for (int j = 0; j < cols2; ++j) {
-      for (int k = 0; k < cols1; ++k) {
-        result[i][j] += A[i][k] * B[k][j];
+         int cols1, int cols2)
+         {
+           for (int i = 0; i < row1; ++i)
+           {
+             for (int j = 0; j < cols2; ++j)
+             {
+              for (int k = 0; k < cols1; ++k)
+              {
+                  result[i][j] += A[i][k] * B[k][j];
       }
     }
   }
 }
 
-int main() {
+int main()
+{
   int n, row1, cols1, rows2, cols2;
   scanf("%d", &n);
   scanf("%d", &row1);
   scanf("%d", &cols1);
   int A[ROWS][COLS];
-  for (int i = 0; i < row1; ++i) {
-    for (int j = 0; j < cols1; ++j) {
+  for (int i = 0; i < row1; ++i)
+  {
+    for (int j = 0; j < cols1; ++j)
+    {
       scanf("%d", &A[i][j]);
     }
   }
 
-  for (int k = 0; k < n - 1; k++) {
+  for (int k = 0; k < n - 1; k++)
+  {
     scanf("%d", &rows2);
     scanf("%d", &cols2);
     // 检查矩阵是否可以相乘

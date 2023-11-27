@@ -17,7 +17,8 @@ int search(int *arr, int key, int length)
   return -1;
 }
 
-int main() {
+int main()
+{
   int n, m;
   scanf("%d %d", &n, &m);
   int arr[n];

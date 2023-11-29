@@ -53,9 +53,4 @@ int main()
         printf("%d ",i+1);
     }
     printf("%d %d",Weight,max);
-    
-    
-    
-
-    
 }

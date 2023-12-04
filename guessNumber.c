@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
+#include<stdio.h>
 //RAND_MAX==32,767
 void menu()
 {
@@ -14,7 +15,7 @@ void game()
 	//1. 生成随机数
 	int guess = 0;
 	int ret = rand() % 100 + 1;
-	printf("%d\n", ret);
+	//printf("%d\n", ret);
 	//2. 猜数字
 	int count = 5;
 	while (count)
@@ -64,22 +65,7 @@ int main()
 			printf("选择错误，重新选择\n");
 			break;
 		}
-		//...
 	} while (input);
-
-	return 0;
-}
-
-int main()
-{
-	
-	srand((unsigned int)time(NULL));
-
-	printf("%d\n", rand() % 100+1);
-	printf("%d\n", rand() % 100+1);
-	printf("%d\n", rand() % 100+1);
-	printf("%d\n", rand() % 100+1);
-	printf("%d\n", rand() % 100+1);
 
 	return 0;
 }

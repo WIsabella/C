@@ -20,10 +20,11 @@ int main()
     {
         D[i]=0,B[i]=0,E[i]=0;
     }
-    int k=0,l=0;
-    for(int i=0;i<pow(2,n);i++)
+    for(int i=1;i<pow(2,n);i++)
     {
+        int k=0,l=0;
         int a=i;
+        
         while(a>0)
         {
             B[k]=a%2;
@@ -34,7 +35,7 @@ int main()
         {
             D[l]=B[j];
             l++;
-        }
+        }//
         int tWeight =0,tValue=0;
         for(int j=0;j<n;j++)
         {
@@ -44,23 +45,22 @@ int main()
         {
             tValue+=D[i]*V[i];
         }
-        if(tWeight<=C)
+        if(tWeight<=C&&tValue>=Value)
         {
-            if(tValue>=Value)
+            Value=tValue;
+            Weight=tWeight;
+            for(int i=0;i<n;i++)
             {
-                Value=tValue;
-                Weight=tWeight;
-                for(int i=0;i<n;i++)
-                {
-                    E[i]=D[i];
-                }
+            E[i]=D[i];
             }
+        
             
         }
     }
     for(int i=0;i<n;i++)
     {
-        printf("%d ",E[i]);
+        if(E[i]==1)
+        printf("%d ",i+1);
     }
     printf("%d ",Weight,Value);
 

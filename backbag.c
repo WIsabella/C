@@ -1,12 +1,31 @@
 #include<stdio.h>
 #include<math.h>
+
+int F(int a,int m)
+{
+    int B[m],D[m];
+    for(int i=0;i<m;i++)
+    {
+        B[i]=0;
+    }
+    int i=0;
+    while(F>0)
+    {
+        B[i]=a%2;
+        a=a/2;
+        i++;
+    }
+    for(int j=i-1;j>=0;j--)
+    {
+        
+    }
+
+}
 int main()
 {
-    int c;
-    int n;
-    scanf("%d%d",&c,&n);
-    int V[n];
-    int W[n];
+    int C,n,Weight,Value;
+    scanf("%d%d",&C,&n);
+    int W[n],V[n];
     for(int i=0;i<n;i++)
     {
         scanf("%d",&W[i]);
@@ -15,42 +34,14 @@ int main()
     {
         scanf("%d",&V[i]);
     }
-    int m=pow(2,n);
-    int a[m];
-    int max=0;
-    int Weight=0,Value=0;
-    for(int i=0;i<m;i++)
-    {
-
-        for(int i=0;i<m;i++)
-     {
-        int x=i;
-        while(x > 0)       
-      {
-        a[--n] = x % 2;
-        x /= 2;
-      }
-      for(int j=0;j<n;j++)
-        {
-            Weight+=a[j]*W[j];
-            Value +=a[j]*V[j];
-        }
-        if(Weight<=c)
-        {
-            if(Value>=max)
-            max=Value;
-        }
-        if(i!=m-1)
-        Weight=0,Value=0;
-
-     }
-        
-        
-    }
+    int Y[n];
     for(int i=0;i<n;i++)
     {
-        if(a[i]==1)
-        printf("%d ",i+1);
+        Y[i]=0;
     }
-    printf("%d %d",Weight,max);
+    for(int i=0;i<pow(2,n);i++)
+    {
+
+    }
+    
 }

@@ -17,23 +17,40 @@ int main()
     {
         scanf("%d",&A[i]);
     }
-    for(int i=0;i<m;i++)
+    for(int j=0;j<m;j++)
     {
-        scanf("%d",&B[i]);
+        scanf("%d",&B[j]);
     }
     int C[n+m];
     int i=0,j=0;
     for(int k=0;k<n+m;k++)
     {
-        if(A[i]<B[j])
+        if(i==n||j==m)
+        {
+            if(i==n)
+            {
+                C[k]=B[j];
+                j++;
+                continue;
+            }
+            if(j==m)
+            {
+                C[k]=A[i];
+                i++;
+                continue;
+            }
+        }
+        else if(A[i]<B[j])
         {
             C[k]=A[i];
             i++;
+            continue;
         }
-        if(A[i]>B[j])
+        else if(A[i]>B[j])
         {
             C[k]=B[j];
             j++;
+            continue;
         }
 
     }

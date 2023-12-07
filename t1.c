@@ -71,7 +71,7 @@ void deleteDuplicates(struct ListNode *head)
         if(A[j]!=-1)
         {
             temp->next=temp->next->next;
-            tem
+            temp=temp->next;
             break;
         }
         else

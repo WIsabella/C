@@ -37,49 +37,42 @@ int main()
     deleteDuplicates(head);
 
     // 输出
-    while (head != NULL) {
+    while (head != NULL)
+	{
         printf("%d ", head->val);
         head = head->next;
     }
 }
 
 // TODO: 在下方补全函数实现
-void deleteDuplicates(struct ListNode* head)
-{
-	if (head == NULL ||(head->next == NULL))
-		return;
-	
-	struct ListNode* pointer = head;
-
-	while (pointer->next != NULL)
+    void deleteDuplicates(struct ListNode *head)
 	{
-		struct ListNode* s = pointer->next;
+        if(head == null||head.next== null){
+            return head;
+        }
+        ListNode dummyHead = new ListNode(-101);
+        dummyHead.next = head;
+        ListNode prev = dummyHead;
+        ListNode cur = prev.next;
+       while(cur!= null){
+           ListNode sec = cur.next;
+           if(sec == null){
+               break;
+           }
+           if(cur.val!= sec.val){
+               prev = prev.next;
+           }else {
+               while (sec!=null&&sec.val == cur.val){
+                   sec = sec.next;
+               }
+               //到达此处有三种情况：
+			//1、没有需要删除的重复结点，是因为last->next == nullptr到此
+			//2、有需要删除的重复结点，是因为last->next == nullptr到此（链表后半段都需要删除）
+			//3、有需要删除的重复结点，是因为last->val != last->next->val到此（链表中间某段需要删除）
 
-		while (s != NULL)
-		{
-			if (pointer->val == s->val)
-			{
-				if (s->next != NULL)
-				{
-					s->val = s->next->val;
-					s->next = s->next->next;
-					free(s->next);
-				}
-				else
-				{
-					struct ListNode *node = pointer->next;
-					while (node->next != s)
-						node = node->next;
-					node->next = NULL;
-					free(s);
-					s = NULL;
-					//free(s);
-				}
-			}
-			else 
-				s = s->next;
-		}
-		pointer = pointer->next;
-	}
-	
-}
+               prev.next = sec;
+           }
+           cur = sec;
+       }
+        return dummyHead.next;
+    }

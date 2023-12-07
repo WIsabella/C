@@ -42,40 +42,9 @@ int main()
 // TODO: 在下方补全函数实现
 void deleteDuplicates(struct ListNode* head)
 {
-	if (head == NULL ||(head->next == NULL))
-		return;
-	
-	struct ListNode* pointer = head;
-
-	while (pointer->next != NULL)
-	{
-		struct ListNode* s = pointer->next;
-
-		while (s != NULL)
-		{
-			if (pointer->val == s->val)
-			{
-				if (s->next != NULL)
-				{
-					s->val = s->next->val;
-					s->next = s->next->next;
-					free(s->next);
-				}
-				else
-				{
-					struct ListNode *node = pointer->next;
-					while (node->next != s)
-						node = node->next;
-					node->next = NULL;
-					free(s);
-					s = NULL;
-					//free(s);
-				}
-			}
-			else 
-				s = s->next;
-		}
-		pointer = pointer->next;
-	}
-	
+    struct ListNode* p = head;
+    while (p && p->next)
+        if (p->val == p->next->val) p->next = p->next->next;
+        else p = p->next;
+    return ;
 }

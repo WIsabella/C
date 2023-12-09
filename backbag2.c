@@ -22,7 +22,7 @@ int main()
     }
     for(int i=1;i<pow(2,n);i++)
     {
-        int k=0,l=0;
+        int k=0,l=n-1;
         int a=i;
         
         while(a>0)
@@ -31,38 +31,40 @@ int main()
             a/=2;
             k++;
         }
-        for(int j=k-1;j>=0;j--)
+        for(int j=0;j<n;j++)
         {
             D[l]=B[j];
-            l++;
-        }//
+            l--;
+        }//倒叙存入D当中。
         int tWeight =0,tValue=0;
         for(int j=0;j<n;j++)
         {
-            tWeight+=D[i]*W[i];
+            tWeight+=D[j]*W[j];//角标千万别用错了。
         }
-        for(int j=0;j<n;j++)
+        if(tWeight<=C)
         {
-            tValue+=D[i]*V[i];
-        }
-        if(tWeight<=C&&tValue>=Value)
-        {
+            for(int j=0;j<n;j++)
+         {
+            tValue+=D[j]*V[j];
+         }
+         if(tValue>Value)
+         {
             Value=tValue;
             Weight=tWeight;
             for(int i=0;i<n;i++)
             {
-            E[i]=D[i];
+                E[i]=D[i];
             }
-        
-            
+         }
         }
+        
+        
     }
     for(int i=0;i<n;i++)
     {
         if(E[i]==1)
         printf("%d ",i+1);
     }
-    printf("%d ",Weight,Value);
-
+    printf("%d %d",Weight,Value);
     
 }

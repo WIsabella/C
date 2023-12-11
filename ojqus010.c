@@ -36,10 +36,21 @@ int main() {
     output(list);
     return 0;
 }
-
+typedef struct ListNode ListNode;
 ListNode* createList(int a[],int n)
 {
-  // TODO: 填写创建链表的函数
+    struct ListNode* head = (struct ListNode*)malloc(sizeof(struct ListNode));
+    head->next = NULL;
+    struct ListNode* p ;
+    p = head;
+    for (int i = 0; i < n; i++)
+    {
+        struct ListNode* s = (struct ListNode*)malloc(sizeof(struct ListNode));
+        s->val=a[i];
+        p->next =s;
+        s->next =NULL;
+        p=s;
+    }
 }
 ListNode* sortList(struct ListNode* head)
 {
@@ -47,7 +58,12 @@ ListNode* sortList(struct ListNode* head)
 }
 void output(ListNode* head)
 {
-  // TODO: 填写输出每个节点值的函数
+    struct ListNode* p=head;//让p指针从"头"开始。
+	while (p->next != NULL)//如果p的下一个结点不为NULL，也就是说如果p结点后还有节点存在，那就输出p后面结点中保存的数据。
+	{
+		printf("%d\n", p->next->val);
+		p = p->next;//p结点后移
+	}
 }
 ListNode* insertNode(ListNode* head,int n)
 {

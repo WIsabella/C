@@ -24,7 +24,7 @@ int main()
     int n=strlen(C);
     for(int i=0;i<n;i++)
     {
-        if(A==16&&C[i]>=10)
+        if(A==16&&C[i]>96)
         {
             D+=(C[i]-87)*pow(A,n-1-i);
         }

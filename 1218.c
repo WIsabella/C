@@ -22,8 +22,6 @@ int main()
     while(str[number]!='.')
     number++;
      
-    
-       
     if(A!=16)
    {    for(i=0;i<number;i++) 
             y1+=(str[number-1-i]-48)*pow(A,i);
@@ -63,8 +61,6 @@ int main()
 }//计算十进制数；			
 
 			
-			
- 
    if(B==10)
    printf("%g\n",sum) ;
    else 

@@ -22,6 +22,7 @@ int main()
     int bnum=0;
     int i=0;
     int  tasum=0;
+    char t1[100];
     double tbsum=0,tssum=0;
     scanf("%d %d %s",&A,&B,&C);
     while(C[i]!='.')
@@ -49,7 +50,7 @@ int main()
 
     int sanum=0,sbnum=0;
     int t=(int)tssum;
-    char An[30];
+    char An[50];
     f(t,B);
     int k=0,flen=0;
     char t2[100];
@@ -60,17 +61,37 @@ int main()
         double m=tssum-t;
         while(m!=0)
         {
-		t2[k]=m*B;
-		y=y*B-t2[k];
-		k++;
-		flen++;
-        if(flen>8)
-		flen=8;
-		for(k=0;k<flen;k++)
-		printf("%d",t2[k]);
-		}	
+         if(B!=16)
+         {
+            t2[k]=m*B;
+		  y=y*B-t2[k];
+		  k++;
+		  flen++;
+          if(flen>8)
+		  flen=8;
+		  for(k=0;k<flen;k++)
+		  printf("%d",t2[k]);
+         }
+         else
+         {
+    	
+    		if(y%16>=10)
+    		    t1[i]=y%16+87;
+    	    else
+    	        t1[i]=y%16+48;
+    	   
+    	    y=y/16;
+		   i++;
+           for(int j=i-1;j>=0;j--)
+			printf("%c",t1[j]);
+		 }
+    	 
+        }
+		
+			
 			
     }
+    
     else;
 
     

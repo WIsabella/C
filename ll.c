@@ -60,8 +60,8 @@ struct ListNode *createList(int a[], int n)
 struct ListNode *sortList(struct ListNode *head)
 {
     int t;
-    struct ListNode* p2=NULL,* p0=NULL,* p1=NULL;
-    p0=head;
+    struct ListNode* p2=NULL,* p1=NULL;
+    
     p1=head;
     while(p1!=NULL)
     {

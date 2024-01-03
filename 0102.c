@@ -2,7 +2,7 @@
 
 int main()
 {
-    int k=10;
-    while(k=0) k-=1;
-    printf("%d",k);
+    int a=2;
+    a*=2+3;
+    printf("%d",a);
 }

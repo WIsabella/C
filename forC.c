@@ -1,47 +1,36 @@
 #include<stdio.h>
+#include<math.h>
 
-void fun(int num,int m);
+int Isprime(int n)
+{
+	for (int i = 2; i < n/2; i++)
+		if (n % i == 0) 
+        return 1;
+	return 0;
+}
+void fun(int n)
+{
+	int i = 0, j;
+	int m=n;
+	for (j = 2;j < m/2; j++)
+			while(n % j == 0)
+			{
+				printf("%d", j);
+				if (n / j >=2) printf("*");
+				n /= j;
+			}
+}
 int main()
 {
-    printf("请输入2024年的月份(例:1)(输入0表示退出)");
-    int num=0;
-    int m=0;
-    while(scanf("%d",&num))
+	int n;
+	int c;
+	scanf("%d", &n);
+    
+	c = Isprime(n);
+	if (c)
     {
-        if(num==0)
-        break;
-        switch(num)
-        {
-            case 1:
-            case 3:
-            case 5:
-            case 7:
-            case 8:
-            case 10:
-            case 12:
-            m=31;
-            break;
-            case 4:
-            case 6:
-            case 9:
-            case 11:
-            m=30;
-            break;
-            case 2:
-            m=29;
-            break;
-        }
-        fun(num,m);
+        printf("%d=",n);
+        fun(n);
     }
-        
-
-}
-
-void fun(int num,int m)
-{
-    for(int i=1;i<=m;i++)
-        {
-            printf("%d月%d日    ",num,i);
-        }
-        printf("\n");
+	else printf("%d is a prime\n",n);
 }
